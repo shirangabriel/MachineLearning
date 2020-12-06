@@ -29,6 +29,10 @@ split = sample.split(dataset$Purchased, SplitRatio = 0.8) # TRUE -> Training set
 trainingSet = subset(dataset, split == TRUE)
 testSet = subset(dataset, split == FALSE)
 
+# Feature Scaling
+trainingSet[, 2:3] = scale(trainingSet[, 2:3])
+testSet[, 2:3] = scale(testSet[, 2:3])
+
 
 
 
